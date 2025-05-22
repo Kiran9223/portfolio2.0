@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Box, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography, IconButton, Tooltip } from '@mui/material';
-import { FileList, FileItem, PortfolioSection } from '../../types';
+import { FileList, FileItem, PortfolioSection, SocialLink } from '../../types';
 import DescriptionIcon from '@mui/icons-material/Description';
 import FolderIcon from '@mui/icons-material/Folder';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
@@ -13,6 +13,8 @@ import EmailIcon from '@mui/icons-material/Email';
 import FolderOpenIcon from '@mui/icons-material/FolderOpen';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import CardMembershipIcon from '@mui/icons-material/CardMembership';
+import { socialLinks } from '../../content';
 
 interface SidePanelProps {
   fileList: FileList;
@@ -28,13 +30,22 @@ const SidePanel: React.FC<SidePanelProps> = ({ fileList, selectedFile, setSelect
     { id: 'projects' as PortfolioSection, icon: <CodeIcon />, tooltip: 'Projects' },
     { id: 'experience' as PortfolioSection, icon: <WorkIcon />, tooltip: 'Experience' },
     { id: 'skills' as PortfolioSection, icon: <SchoolIcon />, tooltip: 'Skills' },
+    { id: 'certifications' as PortfolioSection, icon: <CardMembershipIcon />, tooltip: 'Certifications' },
     { id: 'contact' as PortfolioSection, icon: <EmailIcon />, tooltip: 'Contact' },
   ];
 
-  const socialLinks = [
-    { icon: <GitHubIcon />, tooltip: 'GitHub', url: 'https://github.com/yourusername' },
-    { icon: <LinkedInIcon />, tooltip: 'LinkedIn', url: 'https://linkedin.com/in/yourusername' },
-  ];
+  const getSocialIcon = (iconName: string) => {
+    switch (iconName) {
+      case 'GitHubIcon':
+        return <GitHubIcon />;
+      case 'LinkedInIcon':
+        return <LinkedInIcon />;
+      case 'EmailIcon':
+        return <EmailIcon />;
+      default:
+        return null;
+    }
+  };
 
   return (
     <Box sx={{ display: 'flex' }}>
@@ -124,10 +135,10 @@ const SidePanel: React.FC<SidePanelProps> = ({ fileList, selectedFile, setSelect
 
         {/* Social Links */}
         <Box sx={{ mt: 'auto', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-          {socialLinks.map((link, index) => (
+          {socialLinks.map((link) => (
             <Tooltip 
-              key={index}
-              title={link.tooltip} 
+              key={link.id}
+              title={link.platform} 
               placement="right"
               arrow
             >
@@ -143,7 +154,7 @@ const SidePanel: React.FC<SidePanelProps> = ({ fileList, selectedFile, setSelect
                   },
                 }}
               >
-                {link.icon}
+                {getSocialIcon(link.icon)}
               </IconButton>
             </Tooltip>
           ))}

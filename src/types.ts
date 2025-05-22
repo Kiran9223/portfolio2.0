@@ -1,4 +1,12 @@
-export type PortfolioSection = 'about' | 'projects' | 'skills' | 'contact' | 'experience';
+export type PortfolioSection = 'about' | 'projects' | 'skills' | 'contact' | 'experience' | 'certifications';
+
+export interface FileList extends Array<FileItem> {}
+
+export interface FileItem {
+  id: PortfolioSection;
+  label: string;
+  fileName: string;
+}
 
 export interface Project {
   id: string;
@@ -27,10 +35,19 @@ export interface WorkExperience {
   achievements?: string[];
 }
 
-export interface FileItem {
-  id: PortfolioSection;
-  label: string;
-  fileName: string;
+export interface Certification {
+  id: string;
+  title: string;
+  issuer: string;
+  date: string;
+  credentialUrl: string;
+  description: string;
+  skills: string[];
 }
 
-export type FileList = FileItem[]; 
+export interface SocialLink {
+  id: string;
+  platform: string;
+  url: string;
+  icon: string;
+} 

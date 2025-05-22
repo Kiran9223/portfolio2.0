@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Typography, Paper, Chip, Link, Grid, List, ListItem, ListItemText, Divider, IconButton } from '@mui/material';
-import { Project, Skill, WorkExperience } from '../../types';
+import { Project, Skill, WorkExperience, Certification } from '../../types';
 import { marked } from 'marked';
 import DOMPurify from 'dompurify';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -558,6 +558,145 @@ const Editor: React.FC<EditorProps> = ({ activeTab, content, fileName }) => {
               </Paper>
             ))}
           </Box>
+        </Box>
+      );
+    }
+
+    if (fileName === 'certifications.json') {
+      const certifications = JSON.parse(content.body) as Certification[];
+      return (
+        <Box sx={{ p: 4 }}>
+          <Typography 
+            variant="h4" 
+            sx={{ 
+              mb: 4, 
+              color: '#D4D4D4',
+              fontWeight: 500,
+              position: 'relative',
+              '&::after': {
+                content: '""',
+                position: 'absolute',
+                bottom: -8,
+                left: 0,
+                width: '60px',
+                height: '2px',
+                background: '#007ACC',
+                borderRadius: '2px',
+              },
+            }}
+          >
+            {content.title}
+          </Typography>
+          <Grid container spacing={3}>
+            {certifications.map((cert) => (
+              <Grid item xs={12} md={6} key={cert.id}>
+                <Paper
+                  elevation={0}
+                  sx={{
+                    p: 3,
+                    height: '100%',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    transition: 'all 0.2s ease',
+                    position: 'relative',
+                    overflow: 'hidden',
+                    bgcolor: '#1E1E1E',
+                    border: '1px solid',
+                    borderColor: '#333333',
+                    '&:hover': {
+                      transform: 'translateY(-2px)',
+                      borderColor: '#007ACC',
+                    },
+                  }}
+                >
+                  <Typography 
+                    variant="h6" 
+                    sx={{ 
+                      color: '#D4D4D4',
+                      fontWeight: 500,
+                      mb: 1,
+                    }}
+                  >
+                    {cert.title}
+                  </Typography>
+                  <Typography 
+                    variant="subtitle1" 
+                    sx={{ 
+                      color: '#007ACC',
+                      mb: 2,
+                    }}
+                  >
+                    {cert.issuer}
+                  </Typography>
+                  <Typography 
+                    variant="body2" 
+                    sx={{ 
+                      color: '#858585',
+                      mb: 2,
+                      flex: 1,
+                    }}
+                  >
+                    {cert.description}
+                  </Typography>
+                  <Box sx={{ mb: 2 }}>
+                    {cert.skills.map((skill) => (
+                      <Chip
+                        key={skill}
+                        label={skill}
+                        size="small"
+                        sx={{ 
+                          mr: 1, 
+                          mb: 1,
+                          bgcolor: '#2D2D2D',
+                          color: '#858585',
+                          transition: 'all 0.2s ease',
+                          '&:hover': {
+                            bgcolor: '#007ACC',
+                            color: '#FFFFFF',
+                            transform: 'scale(1.05)',
+                          },
+                        }}
+                      />
+                    ))}
+                  </Box>
+                  <Box sx={{ 
+                    display: 'flex', 
+                    justifyContent: 'space-between', 
+                    alignItems: 'center',
+                    mt: 'auto',
+                  }}>
+                    <Typography 
+                      variant="caption" 
+                      sx={{ 
+                        color: '#858585',
+                      }}
+                    >
+                      Issued: {new Date(cert.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long' })}
+                    </Typography>
+                    {cert.credentialUrl && (
+                      <Link
+                        href={cert.credentialUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        sx={{
+                          color: '#007ACC',
+                          textDecoration: 'none',
+                          display: 'flex',
+                          alignItems: 'center',
+                          '&:hover': {
+                            color: '#4D9CD1',
+                          },
+                        }}
+                      >
+                        View Credential
+                        <LaunchIcon sx={{ ml: 0.5, fontSize: '1rem' }} />
+                      </Link>
+                    )}
+                  </Box>
+                </Paper>
+              </Grid>
+            ))}
+          </Grid>
         </Box>
       );
     }

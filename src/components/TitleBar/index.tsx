@@ -13,15 +13,28 @@ const TitleBar: React.FC = () => {
         alignItems: 'center',
         px: 2,
         WebkitAppRegion: 'drag',
+        position: 'relative',
       }}
     >
       <Typography
         variant="subtitle2"
         sx={{
-          color: '#858585',
+          color: '#CCCCCC',
           fontSize: '0.75rem',
           fontWeight: 500,
           letterSpacing: '0.5px',
+          position: 'relative',
+          display: 'flex',
+          alignItems: 'center',
+          '&::before': {
+            content: '""',
+            display: 'inline-block',
+            width: '6px',
+            height: '6px',
+            borderRadius: '50%',
+            background: '#007ACC',
+            marginRight: '8px',
+          },
         }}
       >
         Portfolio

@@ -1,10 +1,32 @@
-import { Project, Skill, PortfolioSection, WorkExperience } from './types';
+import { Project, Skill, PortfolioSection, WorkExperience, Certification, SocialLink } from './types';
+
+export const socialLinks: SocialLink[] = [
+  {
+    id: 'github',
+    platform: 'GitHub',
+    url: 'https://github.com/yourusername',
+    icon: 'GitHubIcon'
+  },
+  {
+    id: 'linkedin',
+    platform: 'LinkedIn',
+    url: 'https://linkedin.com/in/yourusername',
+    icon: 'LinkedInIcon'
+  },
+  {
+    id: 'email',
+    platform: 'Email',
+    url: 'mailto:your.email@example.com',
+    icon: 'EmailIcon'
+  }
+];
 
 export const fileList: Array<{ id: PortfolioSection; label: string; fileName: string }> = [
   { id: 'about', label: 'About Me', fileName: 'README.md' },
   { id: 'projects', label: 'Projects', fileName: 'projects.ts' },
   { id: 'skills', label: 'Skills', fileName: 'skills.json' },
   { id: 'experience', label: 'Experience', fileName: 'experience.json' },
+  { id: 'certifications', label: 'Certifications', fileName: 'certifications.json' },
   { id: 'contact', label: 'Contact', fileName: 'contact.md' },
 ];
 
@@ -146,6 +168,65 @@ Feel free to explore my projects and get in touch if you'd like to collaborate!
         ]
       }
     ] as WorkExperience[]),
+  },
+  certifications: {
+    title: 'Certifications',
+    body: JSON.stringify([
+      {
+        id: 'cert1',
+        title: 'AWS Certified Solutions Architect - Associate',
+        issuer: 'Amazon Web Services',
+        date: '2023-06',
+        credentialUrl: 'https://www.credly.com/badges/example',
+        description: 'Demonstrated ability to design and deploy scalable, highly available, and fault-tolerant systems on AWS.',
+        skills: ['AWS', 'Cloud Architecture', 'DevOps', 'Security', 'Networking']
+      },
+      {
+        id: 'cert2',
+        title: 'Professional Scrum Master I (PSM I)',
+        issuer: 'Scrum.org',
+        date: '2022-12',
+        credentialUrl: 'https://www.credly.com/badges/example',
+        description: 'Validated knowledge of Scrum framework and ability to facilitate Scrum events and support Scrum teams.',
+        skills: ['Scrum', 'Agile', 'Project Management', 'Team Leadership']
+      },
+      {
+        id: 'cert3',
+        title: 'Google Cloud Professional Cloud Developer',
+        issuer: 'Google Cloud',
+        date: '2023-03',
+        credentialUrl: 'https://www.credly.com/badges/example',
+        description: 'Proven expertise in building scalable and reliable applications using Google Cloud technologies.',
+        skills: ['Google Cloud', 'Cloud Development', 'DevOps', 'Microservices']
+      },
+      {
+        id: 'cert4',
+        title: 'Microsoft Certified: Azure Developer Associate',
+        issuer: 'Microsoft',
+        date: '2023-01',
+        credentialUrl: 'https://www.credly.com/badges/example',
+        description: 'Demonstrated ability to design, build, test, and maintain cloud applications and services on Microsoft Azure.',
+        skills: ['Azure', 'Cloud Development', 'DevOps', 'C#', '.NET']
+      },
+      {
+        id: 'cert5',
+        title: 'Certified Kubernetes Administrator (CKA)',
+        issuer: 'Cloud Native Computing Foundation',
+        date: '2022-09',
+        credentialUrl: 'https://www.credly.com/badges/example',
+        description: 'Proven ability to perform the responsibilities of a Kubernetes administrator in a production environment.',
+        skills: ['Kubernetes', 'Container Orchestration', 'DevOps', 'Cloud Native']
+      },
+      {
+        id: 'cert6',
+        title: 'Oracle Certified Professional, Java SE 11 Developer',
+        issuer: 'Oracle',
+        date: '2022-06',
+        credentialUrl: 'https://www.credly.com/badges/example',
+        description: 'Demonstrated expertise in Java programming language and ability to develop robust applications using Java SE 11.',
+        skills: ['Java', 'Object-Oriented Programming', 'Software Development', 'Enterprise Applications']
+      }
+    ] as Certification[]),
   },
   contact: {
     title: 'Contact',
