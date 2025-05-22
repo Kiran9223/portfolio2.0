@@ -24,23 +24,23 @@ const Editor: React.FC<EditorProps> = ({ activeTab, content, fileName }) => {
       const htmlContent = DOMPurify.sanitize(marked.parse(content.body) as string);
       return (
         <Box sx={{ 
-          p: 4,
+          p: { xs: 1.5, sm: 3, md: 4 },
           maxWidth: '800px',
           mx: 'auto',
           '& h1': {
-            fontSize: '2.5rem',
+            fontSize: { xs: '1.8rem', sm: '2.2rem', md: '2.5rem' },
             fontWeight: 500,
-            mb: 3,
+            mb: { xs: 1.5, sm: 3 },
             color: '#D4D4D4',
             borderBottom: '1px solid',
             borderColor: '#333333',
-            pb: 2,
+            pb: { xs: 0.75, sm: 2 },
           },
           '& h2': {
-            fontSize: '1.8rem',
+            fontSize: { xs: '1.4rem', sm: '1.6rem', md: '1.8rem' },
             fontWeight: 500,
-            mt: 4,
-            mb: 2,
+            mt: { xs: 2, sm: 4 },
+            mb: { xs: 1, sm: 2 },
             color: '#D4D4D4',
             display: 'flex',
             alignItems: 'center',
@@ -48,7 +48,7 @@ const Editor: React.FC<EditorProps> = ({ activeTab, content, fileName }) => {
             '&::before': {
               content: '""',
               display: 'inline-block',
-              width: '4px',
+              width: '3px',
               height: '1.2em',
               background: '#007ACC',
               borderRadius: '2px',
@@ -56,25 +56,25 @@ const Editor: React.FC<EditorProps> = ({ activeTab, content, fileName }) => {
             },
           },
           '& h3': {
-            fontSize: '1.4rem',
+            fontSize: { xs: '1.2rem', sm: '1.3rem', md: '1.4rem' },
             fontWeight: 500,
-            mt: 3,
-            mb: 2,
+            mt: { xs: 1.5, sm: 3 },
+            mb: { xs: 1, sm: 2 },
             color: '#D4D4D4',
           },
           '& p': {
-            fontSize: '1.1rem',
-            lineHeight: 1.7,
-            mb: 2,
+            fontSize: { xs: '0.95rem', sm: '1.05rem', md: '1.1rem' },
+            lineHeight: { xs: 1.6, sm: 1.7 },
+            mb: { xs: 1.25, sm: 2 },
             color: '#858585',
           },
           '& ul, & ol': {
-            pl: 3,
-            mb: 2,
+            pl: { xs: 1.5, sm: 3 },
+            mb: { xs: 1.25, sm: 2 },
             '& li': {
-              fontSize: '1.1rem',
-              lineHeight: 1.7,
-              mb: 1,
+              fontSize: { xs: '0.95rem', sm: '1.05rem', md: '1.1rem' },
+              lineHeight: { xs: 1.6, sm: 1.7 },
+              mb: 0.75,
               color: '#858585',
               position: 'relative',
               '&::marker': {
@@ -87,6 +87,7 @@ const Editor: React.FC<EditorProps> = ({ activeTab, content, fileName }) => {
             textDecoration: 'none',
             transition: 'all 0.2s ease',
             position: 'relative',
+            fontSize: { xs: '0.95rem', sm: '1rem' },
             '&::after': {
               content: '""',
               position: 'absolute',
@@ -108,11 +109,11 @@ const Editor: React.FC<EditorProps> = ({ activeTab, content, fileName }) => {
             },
           },
           '& blockquote': {
-            borderLeft: '4px solid',
+            borderLeft: '3px solid',
             borderColor: '#007ACC',
-            pl: 2,
-            py: 1,
-            my: 2,
+            pl: { xs: 1.5, sm: 2 },
+            py: { xs: 0.75, sm: 1 },
+            my: { xs: 1.5, sm: 2 },
             bgcolor: '#2D2D2D',
             borderRadius: '0 4px 4px 0',
             position: 'relative',
@@ -126,28 +127,29 @@ const Editor: React.FC<EditorProps> = ({ activeTab, content, fileName }) => {
           },
           '& code': {
             bgcolor: '#2D2D2D',
-            px: 1,
-            py: 0.5,
+            px: { xs: 0.75, sm: 1 },
+            py: { xs: 0.25, sm: 0.5 },
             borderRadius: 1,
             fontFamily: 'monospace',
-            fontSize: '0.9em',
+            fontSize: { xs: '0.85em', sm: '0.9em' },
             color: '#D4D4D4',
           },
           '& pre': {
             bgcolor: '#2D2D2D',
-            p: 2,
+            p: { xs: 1.5, sm: 2 },
             borderRadius: 1,
             overflow: 'auto',
             position: 'relative',
             border: '1px solid',
             borderColor: '#333333',
+            my: { xs: 1.5, sm: 2 },
             '& code': {
               bgcolor: 'transparent',
               p: 0,
             },
           },
           '& hr': {
-            my: 4,
+            my: { xs: 2, sm: 4 },
             borderColor: '#333333',
             position: 'relative',
             '&::before': {
@@ -156,7 +158,7 @@ const Editor: React.FC<EditorProps> = ({ activeTab, content, fileName }) => {
               top: '50%',
               left: '50%',
               transform: 'translate(-50%, -50%)',
-              width: '100px',
+              width: { xs: '60px', sm: '100px' },
               height: '1px',
               background: '#007ACC',
             },
@@ -164,7 +166,7 @@ const Editor: React.FC<EditorProps> = ({ activeTab, content, fileName }) => {
           '& img': {
             maxWidth: '100%',
             borderRadius: 1,
-            my: 2,
+            my: { xs: 1.5, sm: 2 },
             border: '1px solid',
             borderColor: '#333333',
             transition: 'transform 0.2s ease-in-out',
@@ -175,11 +177,12 @@ const Editor: React.FC<EditorProps> = ({ activeTab, content, fileName }) => {
           '& table': {
             width: '100%',
             borderCollapse: 'collapse',
-            my: 2,
+            my: { xs: 1.5, sm: 2 },
+            fontSize: { xs: '0.9rem', sm: '1rem' },
             '& th, & td': {
               border: '1px solid',
               borderColor: '#333333',
-              p: 1,
+              p: { xs: 0.75, sm: 1 },
             },
             '& th': {
               bgcolor: '#2D2D2D',
@@ -208,20 +211,21 @@ const Editor: React.FC<EditorProps> = ({ activeTab, content, fileName }) => {
     if (fileName === 'projects.ts') {
       const projects = JSON.parse(content.body) as Project[];
       return (
-        <Box sx={{ p: 4 }}>
+        <Box sx={{ p: { xs: 1.5, sm: 3, md: 4 } }}>
           <Typography 
             variant="h4" 
             sx={{ 
-              mb: 4, 
+              mb: { xs: 2, sm: 4 }, 
               color: '#D4D4D4',
               fontWeight: 500,
+              fontSize: { xs: '1.6rem', sm: '2rem', md: '2.5rem' },
               position: 'relative',
               '&::after': {
                 content: '""',
                 position: 'absolute',
-                bottom: -8,
+                bottom: -6,
                 left: 0,
-                width: '60px',
+                width: { xs: '40px', sm: '60px' },
                 height: '2px',
                 background: '#007ACC',
                 borderRadius: '2px',
@@ -230,13 +234,13 @@ const Editor: React.FC<EditorProps> = ({ activeTab, content, fileName }) => {
           >
             {content.title}
           </Typography>
-          <Grid container spacing={3}>
+          <Grid container spacing={{ xs: 1.5, sm: 3 }}>
             {projects.map((project) => (
               <Grid item xs={12} md={6} key={project.id}>
                 <Paper
                   elevation={0}
                   sx={{
-                    p: 3,
+                    p: { xs: 1.5, sm: 3 },
                     height: '100%',
                     display: 'flex',
                     flexDirection: 'column',
@@ -256,18 +260,21 @@ const Editor: React.FC<EditorProps> = ({ activeTab, content, fileName }) => {
                     display: 'flex', 
                     justifyContent: 'space-between', 
                     alignItems: 'flex-start',
-                    mb: 2,
+                    mb: { xs: 1.25, sm: 2 },
+                    flexDirection: { xs: 'column', sm: 'row' },
+                    gap: { xs: 0.75, sm: 0 },
                   }}>
                     <Typography 
                       variant="h5" 
                       sx={{ 
                         color: '#D4D4D4',
                         fontWeight: 500,
+                        fontSize: { xs: '1.2rem', sm: '1.5rem' },
                       }}
                     >
                       {project.title}
                     </Typography>
-                    <Box sx={{ display: 'flex', gap: 1 }}>
+                    <Box sx={{ display: 'flex', gap: 0.75 }}>
                       <IconButton
                         href={project.githubUrl}
                         target="_blank"
@@ -305,26 +312,28 @@ const Editor: React.FC<EditorProps> = ({ activeTab, content, fileName }) => {
                   <Typography 
                     variant="body1" 
                     sx={{ 
-                      mb: 2, 
+                      mb: { xs: 1.25, sm: 2 }, 
                       flex: 1,
                       color: '#858585',
-                      lineHeight: 1.7,
+                      lineHeight: { xs: 1.6, sm: 1.7 },
+                      fontSize: { xs: '0.9rem', sm: '1rem' },
                     }}
                   >
                     {project.description}
                   </Typography>
-                  <Box sx={{ mb: 2 }}>
+                  <Box sx={{ mb: { xs: 1.25, sm: 2 } }}>
                     {project.technologies.map((tech) => (
                       <Chip
                         key={tech}
                         label={tech}
                         size="small"
                         sx={{ 
-                          mr: 1, 
-                          mb: 1,
+                          mr: 0.75, 
+                          mb: 0.75,
                           bgcolor: '#2D2D2D',
                           color: '#858585',
                           transition: 'all 0.2s ease',
+                          fontSize: { xs: '0.75rem', sm: '0.875rem' },
                           '&:hover': {
                             bgcolor: '#007ACC',
                             color: '#FFFFFF',
@@ -345,13 +354,14 @@ const Editor: React.FC<EditorProps> = ({ activeTab, content, fileName }) => {
     if (fileName === 'skills.json') {
       const skills = JSON.parse(content.body) as Skill[];
       return (
-        <Box sx={{ p: 4 }}>
+        <Box sx={{ p: { xs: 2, sm: 3, md: 4 } }}>
           <Typography 
             variant="h4" 
             sx={{ 
-              mb: 4, 
+              mb: { xs: 3, sm: 4 }, 
               color: '#D4D4D4',
               fontWeight: 500,
+              fontSize: { xs: '1.8rem', sm: '2rem', md: '2.5rem' },
               position: 'relative',
               '&::after': {
                 content: '""',
@@ -367,13 +377,13 @@ const Editor: React.FC<EditorProps> = ({ activeTab, content, fileName }) => {
           >
             {content.title}
           </Typography>
-          <Grid container spacing={3}>
+          <Grid container spacing={{ xs: 2, sm: 3 }}>
             {skills.map((skillGroup) => (
-              <Grid item xs={12} md={4} key={skillGroup.category}>
+              <Grid item xs={12} sm={6} md={4} key={skillGroup.category}>
                 <Paper
                   elevation={0}
                   sx={{
-                    p: 3,
+                    p: { xs: 2, sm: 3 },
                     height: '100%',
                     transition: 'all 0.2s ease',
                     position: 'relative',
@@ -390,9 +400,10 @@ const Editor: React.FC<EditorProps> = ({ activeTab, content, fileName }) => {
                   <Typography 
                     variant="h6" 
                     sx={{ 
-                      mb: 2, 
+                      mb: { xs: 1.5, sm: 2 }, 
                       color: '#D4D4D4',
                       fontWeight: 500,
+                      fontSize: { xs: '1.2rem', sm: '1.3rem' },
                     }}
                   >
                     {skillGroup.category}
@@ -406,6 +417,7 @@ const Editor: React.FC<EditorProps> = ({ activeTab, content, fileName }) => {
                       <Chip
                         key={skill}
                         label={skill}
+                        size="small"
                         sx={{
                           bgcolor: '#2D2D2D',
                           color: '#858585',
@@ -430,13 +442,14 @@ const Editor: React.FC<EditorProps> = ({ activeTab, content, fileName }) => {
     if (fileName === 'experience.json') {
       const experiences = JSON.parse(content.body) as WorkExperience[];
       return (
-        <Box sx={{ p: 4 }}>
+        <Box sx={{ p: { xs: 2, sm: 3, md: 4 } }}>
           <Typography 
             variant="h4" 
             sx={{ 
-              mb: 4, 
+              mb: { xs: 3, sm: 4 }, 
               color: '#D4D4D4',
               fontWeight: 500,
+              fontSize: { xs: '1.8rem', sm: '2rem', md: '2.5rem' },
               position: 'relative',
               '&::after': {
                 content: '""',
@@ -452,13 +465,13 @@ const Editor: React.FC<EditorProps> = ({ activeTab, content, fileName }) => {
           >
             {content.title}
           </Typography>
-          <Box sx={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+          <Box sx={{ display: 'flex', flexDirection: 'column', gap: { xs: 3, sm: 4 } }}>
             {experiences.map((exp) => (
               <Paper
                 key={exp.id}
                 elevation={0}
                 sx={{
-                  p: 3,
+                  p: { xs: 2, sm: 3 },
                   transition: 'all 0.2s ease',
                   bgcolor: '#1E1E1E',
                   border: '1px solid',
@@ -469,29 +482,79 @@ const Editor: React.FC<EditorProps> = ({ activeTab, content, fileName }) => {
                   },
                 }}
               >
-                <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', mb: 2 }}>
+                <Box sx={{ 
+                  display: 'flex', 
+                  justifyContent: 'space-between', 
+                  alignItems: 'flex-start', 
+                  mb: { xs: 1.5, sm: 2 },
+                  flexDirection: { xs: 'column', sm: 'row' },
+                  gap: { xs: 1, sm: 0 },
+                }}>
                   <Box>
-                    <Typography variant="h5" sx={{ color: '#D4D4D4', fontWeight: 500 }} gutterBottom>
+                    <Typography 
+                      variant="h5" 
+                      sx={{ 
+                        color: '#D4D4D4', 
+                        fontWeight: 500,
+                        fontSize: { xs: '1.3rem', sm: '1.5rem' },
+                      }} 
+                      gutterBottom
+                    >
                       {exp.position}
                     </Typography>
-                    <Typography variant="h6" sx={{ color: '#007ACC', fontWeight: 500 }}>
+                    <Typography 
+                      variant="h6" 
+                      sx={{ 
+                        color: '#007ACC', 
+                        fontWeight: 500,
+                        fontSize: { xs: '1.1rem', sm: '1.2rem' },
+                      }}
+                    >
                       {exp.company}
                     </Typography>
                   </Box>
-                  <Typography variant="subtitle1" sx={{ color: '#858585' }}>
+                  <Typography 
+                    variant="subtitle1" 
+                    sx={{ 
+                      color: '#858585',
+                      fontSize: { xs: '0.9rem', sm: '1rem' },
+                    }}
+                  >
                     {exp.startDate} - {exp.endDate}
                   </Typography>
                 </Box>
                 
-                <Typography variant="subtitle2" sx={{ color: '#858585' }} gutterBottom>
+                <Typography 
+                  variant="subtitle2" 
+                  sx={{ 
+                    color: '#858585',
+                    fontSize: { xs: '0.9rem', sm: '1rem' },
+                  }} 
+                  gutterBottom
+                >
                   {exp.location}
                 </Typography>
                 
-                <Typography variant="body1" sx={{ color: '#858585' }} paragraph>
+                <Typography 
+                  variant="body1" 
+                  sx={{ 
+                    color: '#858585',
+                    fontSize: { xs: '0.95rem', sm: '1rem' },
+                  }} 
+                  paragraph
+                >
                   {exp.description}
                 </Typography>
 
-                <Typography variant="h6" sx={{ color: '#D4D4D4', fontWeight: 500 }} gutterBottom>
+                <Typography 
+                  variant="h6" 
+                  sx={{ 
+                    color: '#D4D4D4', 
+                    fontWeight: 500,
+                    fontSize: { xs: '1.1rem', sm: '1.2rem' },
+                  }} 
+                  gutterBottom
+                >
                   Key Responsibilities
                 </Typography>
                 <List dense>
@@ -502,6 +565,7 @@ const Editor: React.FC<EditorProps> = ({ activeTab, content, fileName }) => {
                         sx={{ 
                           '& .MuiListItemText-primary': {
                             color: '#858585',
+                            fontSize: { xs: '0.9rem', sm: '1rem' },
                           },
                         }}
                       />
@@ -509,8 +573,16 @@ const Editor: React.FC<EditorProps> = ({ activeTab, content, fileName }) => {
                   ))}
                 </List>
 
-                <Box sx={{ mt: 2, mb: 2 }}>
-                  <Typography variant="h6" sx={{ color: '#D4D4D4', fontWeight: 500 }} gutterBottom>
+                <Box sx={{ mt: { xs: 1.5, sm: 2 }, mb: { xs: 1.5, sm: 2 } }}>
+                  <Typography 
+                    variant="h6" 
+                    sx={{ 
+                      color: '#D4D4D4', 
+                      fontWeight: 500,
+                      fontSize: { xs: '1.1rem', sm: '1.2rem' },
+                    }} 
+                    gutterBottom
+                  >
                     Technologies
                   </Typography>
                   <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
@@ -536,7 +608,15 @@ const Editor: React.FC<EditorProps> = ({ activeTab, content, fileName }) => {
 
                 {exp.achievements && (
                   <>
-                    <Typography variant="h6" sx={{ color: '#D4D4D4', fontWeight: 500 }} gutterBottom>
+                    <Typography 
+                      variant="h6" 
+                      sx={{ 
+                        color: '#D4D4D4', 
+                        fontWeight: 500,
+                        fontSize: { xs: '1.1rem', sm: '1.2rem' },
+                      }} 
+                      gutterBottom
+                    >
                       Key Achievements
                     </Typography>
                     <List dense>
@@ -547,6 +627,7 @@ const Editor: React.FC<EditorProps> = ({ activeTab, content, fileName }) => {
                             sx={{ 
                               '& .MuiListItemText-primary': {
                                 color: '#858585',
+                                fontSize: { xs: '0.9rem', sm: '1rem' },
                               },
                             }}
                           />
@@ -565,13 +646,14 @@ const Editor: React.FC<EditorProps> = ({ activeTab, content, fileName }) => {
     if (fileName === 'certifications.json') {
       const certifications = JSON.parse(content.body) as Certification[];
       return (
-        <Box sx={{ p: 4 }}>
+        <Box sx={{ p: { xs: 2, sm: 3, md: 4 } }}>
           <Typography 
             variant="h4" 
             sx={{ 
-              mb: 4, 
+              mb: { xs: 3, sm: 4 }, 
               color: '#D4D4D4',
               fontWeight: 500,
+              fontSize: { xs: '1.8rem', sm: '2rem', md: '2.5rem' },
               position: 'relative',
               '&::after': {
                 content: '""',
@@ -587,13 +669,13 @@ const Editor: React.FC<EditorProps> = ({ activeTab, content, fileName }) => {
           >
             {content.title}
           </Typography>
-          <Grid container spacing={3}>
+          <Grid container spacing={{ xs: 2, sm: 3 }}>
             {certifications.map((cert) => (
               <Grid item xs={12} md={6} key={cert.id}>
                 <Paper
                   elevation={0}
                   sx={{
-                    p: 3,
+                    p: { xs: 2, sm: 3 },
                     height: '100%',
                     display: 'flex',
                     flexDirection: 'column',
@@ -615,6 +697,7 @@ const Editor: React.FC<EditorProps> = ({ activeTab, content, fileName }) => {
                       color: '#D4D4D4',
                       fontWeight: 500,
                       mb: 1,
+                      fontSize: { xs: '1.2rem', sm: '1.3rem' },
                     }}
                   >
                     {cert.title}
@@ -624,6 +707,7 @@ const Editor: React.FC<EditorProps> = ({ activeTab, content, fileName }) => {
                     sx={{ 
                       color: '#007ACC',
                       mb: 2,
+                      fontSize: { xs: '1rem', sm: '1.1rem' },
                     }}
                   >
                     {cert.issuer}
@@ -634,6 +718,7 @@ const Editor: React.FC<EditorProps> = ({ activeTab, content, fileName }) => {
                       color: '#858585',
                       mb: 2,
                       flex: 1,
+                      fontSize: { xs: '0.9rem', sm: '1rem' },
                     }}
                   >
                     {cert.description}
@@ -664,11 +749,14 @@ const Editor: React.FC<EditorProps> = ({ activeTab, content, fileName }) => {
                     justifyContent: 'space-between', 
                     alignItems: 'center',
                     mt: 'auto',
+                    flexDirection: { xs: 'column', sm: 'row' },
+                    gap: { xs: 1, sm: 0 },
                   }}>
                     <Typography 
                       variant="caption" 
                       sx={{ 
                         color: '#858585',
+                        fontSize: { xs: '0.8rem', sm: '0.9rem' },
                       }}
                     >
                       Issued: {new Date(cert.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long' })}
@@ -683,6 +771,7 @@ const Editor: React.FC<EditorProps> = ({ activeTab, content, fileName }) => {
                           textDecoration: 'none',
                           display: 'flex',
                           alignItems: 'center',
+                          fontSize: { xs: '0.8rem', sm: '0.9rem' },
                           '&:hover': {
                             color: '#4D9CD1',
                           },
@@ -710,6 +799,7 @@ const Editor: React.FC<EditorProps> = ({ activeTab, content, fileName }) => {
       overflowY: 'auto',
       position: 'relative',
       bgcolor: '#1E1E1E',
+      WebkitOverflowScrolling: 'touch', // Smooth scrolling on iOS
     }}>
       {renderContent()}
     </Box>
