@@ -44,10 +44,18 @@ const StatusBar: React.FC = () => {
             fontSize: '0.75rem',
             fontWeight: 400,
           }}
-        >
-          TypeScript React
+        >Built with React and TypeScript
         </Typography>
         <Box sx={{ flex: 1 }} />
+        <Typography
+          variant="caption"
+          sx={{
+            color: '#FFFFFF',
+            fontSize: '0.75rem',
+            fontWeight: 400,
+          }}
+        >All rights reserved
+        </Typography>
         <Tooltip title="Portfolio Assistant" placement="top">
           <IconButton
             onClick={() => setIsChatOpen(true)}

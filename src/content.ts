@@ -142,19 +142,24 @@ Feel free to explore my projects and get in touch if you'd like to collaborate!
         company: 'IBM',
         position: 'Software Engineer',
         location: 'Bengaluru, KA',
-        startDate: '2020-10',
-        endDate: '2024-04',
+        startDate: '2020-October',
+        endDate: '2024-April',
         description: 'Leading the development of enterprise-scale web applications and mentoring junior developers.',
         responsibilities: [
-          'Architected and developed microservices-based applications using Node.js and React',
-          'Implemented CI/CD pipelines using GitHub Actions and AWS',
-          'Led a team of 5 developers in delivering multiple projects',
-          'Conducted code reviews and implemented best practices',
-          'Optimized application performance and reduced load times by 40%'
+          'Developed and optimized RESTful APIs using Java and Spring Boot, Python, and Flask, scaled to handle over 3000 users per minute, ensuring seamless performance and reliability in high-traffic environments',
+          'Enhanced user experience by developing dynamic web pages with Angular and React, resulting in a 30% increase in user engagement within 2 weeks',
+          'Migrated the codebase from Java 8 to Java 11 by updating deprecated APIs, refactoring critical components, and leveraging new Java features, resulting in a 20% performance boost and enhanced security',
+          'Deployed applications on AWS using EC2, S3, Docker, and Kubernetes while leveraging AWS Lambda for serverless execution and automating deployments through CI/CD pipelines, ensuring scalability and security',
+          'Leveraged Kafka Streams to process and analyze event-driven data, enabling efficient handling of high-throughput transactional data and reducing system latency',
+          'Integrated IBM WatsonX generative AI to develop functionality that summarized email chains of up to 20 emails into concise 5-sentence paragraphs, significantly reducing users time manually reading each email',
+          'Redesigned and optimized database schemas for IBM DB2 and MongoDB, leading to a 60% increase in query efficiency and improved platform performance',
+          'Collaborated in a Scrum-based Agile environment, leveraging JIRA for sprint planning, backlog grooming, and issue tracking, which streamlined development workflows and enabled on-time feature delivery',
+          'Implemented Test-Driven Development (TDD) to write unit and integration tests before feature implementation, ensuring high code quality, early bug detection, and maintaining a robust test suite that improved code coverage by 30%'
         ],
         technologies: ['Java', 'Python', 'Spring Boot', 'FastAPI', 'Flask', 'RESTFul APIs', 'IBM Public Cloud', 'Docker', 'Kubernetes'],
         achievements: [
           'Reduced deployment time by 60% through automation',
+          'Successfully migrated legacy application to modern frontend framework Angular and React',
           'Improved test coverage from 65% to 90%',
           'Mentored 4 new joiners'
         ]
@@ -166,30 +171,30 @@ Feel free to explore my projects and get in touch if you'd like to collaborate!
     body: JSON.stringify([
       {
         id: 'cert1',
-        title: 'AWS Certified Solutions Architect - Associate',
+        title: 'AWS Certified Developer - Associate (In-progress)',
         issuer: 'Amazon Web Services',
-        date: '2023-06',
-        credentialUrl: 'https://www.credly.com/badges/example',
+        date: '2026-July',
+        credentialUrl: '/',
         description: 'Demonstrated ability to design and deploy scalable, highly available, and fault-tolerant systems on AWS.',
-        skills: ['AWS', 'Cloud Architecture', 'DevOps', 'Security', 'Networking']
+        skills: ['AWS', 'Cloud Architecture', 'Cloud Developer', 'DevOps', 'Security', 'Networking']
       },
       {
         id: 'cert2',
-        title: 'Professional Scrum Master I (PSM I)',
-        issuer: 'Scrum.org',
-        date: '2022-12',
-        credentialUrl: 'https://www.credly.com/badges/example',
-        description: 'Validated knowledge of Scrum framework and ability to facilitate Scrum events and support Scrum teams.',
-        skills: ['Scrum', 'Agile', 'Project Management', 'Team Leadership']
+        title: 'IBM Cloud Essentials',
+        issuer: 'IBM',
+        date: '2023-July',
+        credentialUrl: 'https://www.credly.com/badges/ee9fcab8-fc5f-4a0d-9101-c1675fc092db',
+        description: 'This badge earner is able to relate how the IBM Cloud enables the different service (IaaS, PaaS, SaaS) models and different deployment (Public, Hybrid, Private) models of cloud computing.',
+        skills: ['IBM Cloud', 'Cloud Development', 'DevOps', 'Microservices']
       },
       {
         id: 'cert3',
-        title: 'Google Cloud Professional Cloud Developer',
-        issuer: 'Google Cloud',
-        date: '2023-03',
-        credentialUrl: 'https://www.credly.com/badges/example',
-        description: 'Proven expertise in building scalable and reliable applications using Google Cloud technologies.',
-        skills: ['Google Cloud', 'Cloud Development', 'DevOps', 'Microservices']
+        title: 'IBM Garage Essentials',
+        issuer: 'IBM',
+        date: '2022-October',
+        credentialUrl: 'https://www.credly.com/badges/ee9fcab8-fc5f-4a0d-9101-c1675fc092db',
+        description: 'This badge earner is able to demonstrate understanding of IBM Garage Methodology, assets and platforms',
+        skills: ['Scrum', 'Agile', 'Project Management', 'Team Leadership', 'DevOps', 'IBM Garage Methodology']
       },
     ] as Certification[])
   },
