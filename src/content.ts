@@ -173,13 +173,22 @@ Feel free to explore my projects and get in touch if you'd like to collaborate!
         id: 'cert1',
         title: 'AWS Certified Developer - Associate (In-progress)',
         issuer: 'Amazon Web Services',
-        date: '2026-July',
+        date: '2025-July',
         credentialUrl: '/',
         description: 'Demonstrated ability to design and deploy scalable, highly available, and fault-tolerant systems on AWS.',
         skills: ['AWS', 'Cloud Architecture', 'Cloud Developer', 'DevOps', 'Security', 'Networking']
       },
       {
         id: 'cert2',
+        title: 'Generative AI Fundamentals',
+        issuer: 'Databricks',
+        date: '2025-May',
+        credentialUrl: 'https://credentials.databricks.com/34a65a94-4149-4f4c-85f7-6eaf4d54182d#acc.tjKdJfMW',
+        description: 'Learned about the Generative AI landscape, including LLMs, RAG, and vector databases, and explored their applications in various domains.',
+        skills: ['Generative AI', 'LLMs', 'AI Applications']
+      },
+      {
+        id: 'cert3',
         title: 'IBM Cloud Essentials',
         issuer: 'IBM',
         date: '2023-July',
@@ -188,7 +197,7 @@ Feel free to explore my projects and get in touch if you'd like to collaborate!
         skills: ['IBM Cloud', 'Cloud Development', 'DevOps', 'Microservices']
       },
       {
-        id: 'cert3',
+        id: 'cert4',
         title: 'IBM Garage Essentials',
         issuer: 'IBM',
         date: '2022-October',

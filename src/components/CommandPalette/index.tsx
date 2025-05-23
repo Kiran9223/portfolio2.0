@@ -8,10 +8,7 @@ import {
   ListItem, 
   ListItemText, 
   Typography,
-  Paper,
-  Fade,
 } from '@mui/material';
-import { InsertDriveFile as FileIcon } from '@mui/icons-material';
 import { PortfolioSection } from '../../types';
 
 interface CommandPaletteProps {

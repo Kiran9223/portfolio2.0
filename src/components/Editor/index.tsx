@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Typography, Paper, Chip, Link, Grid, List, ListItem, ListItemText, Divider, IconButton } from '@mui/material';
+import { Box, Typography, Paper, Chip, Link, Grid, List, ListItem, ListItemText, IconButton } from '@mui/material';
 import { Project, Skill, WorkExperience, Certification } from '../../types';
 import { marked } from 'marked';
 import DOMPurify from 'dompurify';
