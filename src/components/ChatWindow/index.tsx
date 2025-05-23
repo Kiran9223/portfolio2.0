@@ -111,7 +111,7 @@ const ChatWindow: React.FC<ChatWindowProps> = ({ onClose }) => {
               fontSize: '0.875rem',
             }}
           >
-            👋 Hi! I'm your portfolio assistant. How can I help you today?
+            👋 Hi! I'm your portfolio assistant. I'm currently under development. 
           </Typography>
         </Box>
       </Box>

@@ -232,7 +232,7 @@ Feel free to reach out through any of these channels. I typically respond within
     body: `
 <div style="text-align: center; margin-bottom: 20px;">
   <a
-    href="https://drive.google.com/drive/u/4/folders/1F8P2wf69IOYg3zShVpt7JhKjh57ly2hS"
+    href="https://drive.google.com/file/d/1dqQof4aD7qipdsNI5SASAdgcsMm5-Cc3/view?usp=sharing"
     target="_blank"
     rel="noopener noreferrer"
     class="download-button"
