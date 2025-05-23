@@ -12,6 +12,7 @@ import FolderOpenIcon from '@mui/icons-material/FolderOpen';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import CardMembershipIcon from '@mui/icons-material/CardMembership';
+import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 import { socialLinks } from '../../content';
 
 interface SidePanelProps {
@@ -29,6 +30,7 @@ const SidePanel: React.FC<SidePanelProps> = ({ fileList, selectedFile, setSelect
     { id: 'experience' as PortfolioSection, icon: <WorkIcon />, tooltip: 'Experience' },
     { id: 'skills' as PortfolioSection, icon: <SchoolIcon />, tooltip: 'Skills' },
     { id: 'certifications' as PortfolioSection, icon: <CardMembershipIcon />, tooltip: 'Certifications' },
+    { id: 'resume' as PortfolioSection, icon: <PictureAsPdfIcon />, tooltip: 'Resume' },
     { id: 'contact' as PortfolioSection, icon: <EmailIcon />, tooltip: 'Contact' },
   ];
 
