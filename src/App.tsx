@@ -10,6 +10,7 @@ import WelcomePage from './components/WelcomePage';
 import { fileList, content } from './content';
 import { PortfolioSection } from './types';
 import showConsoleMessages from './utils/consoleMessages';
+import { socialLinks as socialLinksContent } from './content';
 
 const darkTheme = createTheme({
   palette: {
@@ -124,9 +125,9 @@ function App() {
   const [showWelcome, setShowWelcome] = useState(true);
 
   const socialLinks = {
-    github: 'https://github.com/yourusername',
-    linkedin: 'https://linkedin.com/in/yourusername',
-    email: 'mailto:your.email@example.com',
+    github: socialLinksContent[0].url,
+    linkedin: socialLinksContent[1].url,
+    email: socialLinksContent[2].url,
   };
 
   useEffect(() => {

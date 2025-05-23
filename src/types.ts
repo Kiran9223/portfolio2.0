@@ -1,4 +1,4 @@
-export type PortfolioSection = 'about' | 'projects' | 'skills' | 'contact' | 'experience' | 'certifications';
+export type PortfolioSection = 'about' | 'projects' | 'skills' | 'contact' | 'experience' | 'certifications' | 'resume';
 
 export interface FileList extends Array<FileItem> {}
 

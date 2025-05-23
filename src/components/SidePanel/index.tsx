@@ -53,7 +53,7 @@ const SidePanel: React.FC<SidePanelProps> = ({ fileList, selectedFile, setSelect
       <Box
         sx={{
           width: '48px',
-          bgcolor: '#1E1E1E',
+          bgcolor: '#252526',
           borderRight: '1px solid',
           borderColor: '#333333',
           display: 'flex',
@@ -165,7 +165,7 @@ const SidePanel: React.FC<SidePanelProps> = ({ fileList, selectedFile, setSelect
       <Box
         sx={{
           width: isExplorerCollapsed ? 0 : '240px',
-          bgcolor: '#1E1E1E',
+          bgcolor: '#252526',
           borderRight: '1px solid',
           borderColor: '#333333',
           display: 'flex',

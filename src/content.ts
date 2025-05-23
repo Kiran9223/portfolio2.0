@@ -4,19 +4,19 @@ export const socialLinks: SocialLink[] = [
   {
     id: 'github',
     platform: 'GitHub',
-    url: 'https://github.com/yourusername',
+    url: 'https://github.com/Kiran9223',
     icon: 'GitHubIcon'
   },
   {
     id: 'linkedin',
     platform: 'LinkedIn',
-    url: 'https://linkedin.com/in/yourusername',
+    url: 'http://www.linkedin.com/in/kiran-sukumar',
     icon: 'LinkedInIcon'
   },
   {
     id: 'email',
     platform: 'Email',
-    url: 'mailto:your.email@example.com',
+    url: 'mailto:kiransukumar@csu.fullerton.edu',
     icon: 'EmailIcon'
   }
 ];
@@ -28,25 +28,26 @@ export const fileList: Array<{ id: PortfolioSection; label: string; fileName: st
   { id: 'experience', label: 'Experience', fileName: 'experience.json' },
   { id: 'certifications', label: 'Certifications', fileName: 'certifications.json' },
   { id: 'contact', label: 'Contact', fileName: 'contact.md' },
+  { id: 'resume', label: 'Resume', fileName: 'resume.pdf' },
 ];
 
 export const content: Record<PortfolioSection, { title: string; body: string }> = {
   about: {
     title: 'About Me',
     body: `
-# 👋 Hi, I'm John Doe
+# 👋 Hi, I'm Kiran Sukumar
 
-## Full Stack Developer & Open Source Enthusiast
+## Full Stack Developer
 
-I'm a passionate software engineer with 5+ years of experience in building modern web applications. I specialize in React, Node.js, and cloud technologies, with a strong focus on creating scalable and maintainable solutions.
+I'm a passionate software engineer with 4 years of experience in building modern web applications. I specialize in Java, Python, Spring Boot, FastAPI, Flask, React and cloud technologies, with a strong focus on creating scalable and maintainable solutions.
 
 ### 🚀 What I Do
 
 - Design and develop full-stack web applications
 - Build and maintain RESTful APIs and microservices
+- Integrate LLM and other AI tools to enhance application functionality
 - Create responsive and accessible user interfaces
 - Implement CI/CD pipelines and DevOps practices
-- Contribute to open-source projects
 
 ### 🎯 My Approach
 
@@ -59,77 +60,90 @@ I believe in writing clean, efficient code and following best practices. My deve
 
 ### 🌟 Current Focus
 
-- Exploring Web3 and blockchain technologies
-- Learning Rust and system programming
-- Contributing to open-source projects
+- Exploring LLMs, AI and AI Agents
+- Develop cloud native applications using AWS
 - Building developer tools and utilities
 
 ### 🎓 Education & Background
 
-- B.S. in Computer Science, University of Technology
-- Certified AWS Solutions Architect
-- Regular speaker at tech meetups and conferences
-- Active open-source contributor
+- Master of Science in Computer Science, California State University, Fullerton [Anticipated Graduation: May 2026]
+- Bachelor of Technology in Information Technology, SSN College of Engineering
 
 Feel free to explore my projects and get in touch if you'd like to collaborate!
-    `,
+    `
   },
   projects: {
     title: 'Projects',
     body: JSON.stringify([
       {
         id: 'project1',
-        title: 'E-Commerce Platform',
-        description: 'A full-stack e-commerce platform built with React, Node.js, and MongoDB. Features include user authentication, product management, shopping cart, and payment integration.',
-        technologies: ['React', 'Node.js', 'MongoDB', 'Stripe', 'AWS'],
-        githubUrl: 'https://github.com/username/ecommerce',
-        liveUrl: 'https://ecommerce-demo.com',
+        title: 'Stratosphere',
+        description: 'Developed a dynamic backend with FastAPI and asynchronous programming for secure user subscription management, leveraging JWT-based authentication, RBAC, and real-time usage tracking. Simulated cloud services to enforce subscription plan limits and provided admin functionalities to manage plans, permissions, and user access seamlessly.',
+        technologies: ['Python', 'FASTApi', 'JWT'],
+        githubUrl: 'https://github.com/Kiran9223/stratosphere',
+        liveUrl: 'https://github.com/Kiran9223/stratosphere'
       },
       {
         id: 'project2',
-        title: 'Task Management App',
-        description: 'A collaborative task management application with real-time updates, team workspaces, and progress tracking. Built with React, Firebase, and Material-UI.',
-        technologies: ['React', 'Firebase', 'Material-UI', 'Redux'],
-        githubUrl: 'https://github.com/username/task-manager',
-        liveUrl: 'https://task-manager-demo.com',
+        title: 'CineSage',
+        description: 'Utilized GPT-4 (an LLM) to generate movie embeddings and transform user queries, creating a Generative AI-driven recommendation pipeline underpinned by Retrieval-Augmented Generation (RAG). Leveraged Weaviate\'s vector database for rapid similarity searches and retrieval, enabling context-rich, highly relevant movie recommendations.',
+        technologies: ['Python', 'LLM-GPT4', 'RAG', 'StreamLit', 'VectorDB', 'Weaviate'],
+        githubUrl: 'https://github.com/Kiran9223/movie-recommendation',
+        liveUrl: 'https://github.com/Kiran9223/movie-recommendation'
       },
       {
         id: 'project3',
-        title: 'Weather Dashboard',
-        description: 'A weather dashboard that displays current weather conditions and forecasts using multiple weather APIs. Features include location search, weather maps, and historical data.',
-        technologies: ['React', 'OpenWeather API', 'Chart.js', 'Geolocation API'],
-        githubUrl: 'https://github.com/username/weather-dashboard',
-        liveUrl: 'https://weather-dashboard-demo.com',
+        title: 'Meta Mart',
+        description: 'An auction platform for buying and selling NFTs. The platform allows users to bid on NFTs and the highest bidder wins the NFT. The platform also allows users to mint a new NFT and offer to the auction and view the list of products.',
+        technologies: ['React', 'Solidity', 'Ethers.js', 'Meta Mask', 'IPFS'],
+        githubUrl: 'https://github.com/Kiran9223/Auction-DApp',
+        liveUrl: 'https://github.com/Kiran9223/Auction-DApp'
       },
-    ] as Project[]),
+      {
+        id: 'project4',
+        title: 'WikiMedia',
+        description: 'Developed a backend application to demonstrate the use of Kafka and MySQL to implement a pattern to fetch live data and store it in the DB.',
+        technologies: ['Java', 'Spring Boot', 'Kafka', 'MySQL'],
+        githubUrl: 'https://github.com/Kiran9223/wikimedia',
+        liveUrl: 'https://github.com/Kiran9223/wikimedia'
+      }
+    ] as Project[])
   },
   skills: {
     title: 'Skills',
     body: JSON.stringify([
       {
         category: 'Frontend',
-        items: ['React', 'TypeScript', 'Next.js', 'Redux', 'Material-UI', 'Tailwind CSS', 'HTML5', 'CSS3', 'JavaScript'],
+        items: ['React', 'Angular', 'Material-UI', 'Tailwind CSS', 'HTML5', 'CSS3', 'JavaScript']
       },
       {
         category: 'Backend',
-        items: ['Node.js', 'Express', 'Python', 'Django', 'PostgreSQL', 'MongoDB', 'GraphQL', 'REST APIs'],
+        items: ['Java', 'Python', 'GO', 'Spring Boot', 'FastAPI', 'Flask', 'Kafka', 'Redis', 'MySQL', 'IBM DB2', 'MongoDB', 'REST APIs']
       },
       {
         category: 'Tools & Others',
-        items: ['Git', 'Docker', 'AWS', 'CI/CD', 'Jest', 'Cypress', 'Webpack', 'Vite'],
+        items: ['Git', 'Docker', 'Kubernetes', 'AWS', 'CI/CD']
       },
-    ] as Skill[]),
+      {
+        category: 'AI',
+        items: ['LLM', 'RAG', 'VectorDB', 'Weaviate', 'LangChain', 'Pydantic']
+      },
+      {
+        category: 'Software Design',
+        items: ['Object-Oriented Programming', 'Event-Driven Architecture', 'Microservices', 'RESTful APIs', 'SOLID Principles', 'Design Patterns']
+      }
+    ] as Skill[])
   },
   experience: {
     title: 'Work Experience',
     body: JSON.stringify([
       {
         id: 'exp1',
-        company: 'Tech Innovations Inc.',
-        position: 'Senior Full Stack Developer',
-        location: 'San Francisco, CA',
-        startDate: '2021-01',
-        endDate: 'Present',
+        company: 'IBM',
+        position: 'Software Engineer',
+        location: 'Bengaluru, KA',
+        startDate: '2020-10',
+        endDate: '2024-04',
         description: 'Leading the development of enterprise-scale web applications and mentoring junior developers.',
         responsibilities: [
           'Architected and developed microservices-based applications using Node.js and React',
@@ -138,36 +152,14 @@ Feel free to explore my projects and get in touch if you'd like to collaborate!
           'Conducted code reviews and implemented best practices',
           'Optimized application performance and reduced load times by 40%'
         ],
-        technologies: ['React', 'Node.js', 'TypeScript', 'AWS', 'Docker', 'Kubernetes'],
+        technologies: ['Java', 'Python', 'Spring Boot', 'FastAPI', 'Flask', 'RESTFul APIs', 'IBM Public Cloud', 'Docker', 'Kubernetes'],
         achievements: [
           'Reduced deployment time by 60% through automation',
           'Improved test coverage from 65% to 90%',
-          'Mentored 3 junior developers who were promoted to mid-level positions'
-        ]
-      },
-      {
-        id: 'exp2',
-        company: 'Digital Solutions Ltd.',
-        position: 'Full Stack Developer',
-        location: 'New York, NY',
-        startDate: '2019-03',
-        endDate: '2020-12',
-        description: 'Developed and maintained multiple web applications for enterprise clients.',
-        responsibilities: [
-          'Built responsive web applications using React and Material-UI',
-          'Developed RESTful APIs using Express.js and MongoDB',
-          'Implemented authentication and authorization systems',
-          'Collaborated with UX designers to implement pixel-perfect designs',
-          'Participated in agile development processes'
-        ],
-        technologies: ['React', 'Express.js', 'MongoDB', 'Material-UI', 'Redux', 'Jest'],
-        achievements: [
-          'Delivered 5 major projects on time and under budget',
-          'Reduced bug reports by 35% through improved testing',
-          'Implemented automated testing that saved 20 hours per week'
+          'Mentored 4 new joiners'
         ]
       }
-    ] as WorkExperience[]),
+    ] as WorkExperience[])
   },
   certifications: {
     title: 'Certifications',
@@ -199,34 +191,7 @@ Feel free to explore my projects and get in touch if you'd like to collaborate!
         description: 'Proven expertise in building scalable and reliable applications using Google Cloud technologies.',
         skills: ['Google Cloud', 'Cloud Development', 'DevOps', 'Microservices']
       },
-      {
-        id: 'cert4',
-        title: 'Microsoft Certified: Azure Developer Associate',
-        issuer: 'Microsoft',
-        date: '2023-01',
-        credentialUrl: 'https://www.credly.com/badges/example',
-        description: 'Demonstrated ability to design, build, test, and maintain cloud applications and services on Microsoft Azure.',
-        skills: ['Azure', 'Cloud Development', 'DevOps', 'C#', '.NET']
-      },
-      {
-        id: 'cert5',
-        title: 'Certified Kubernetes Administrator (CKA)',
-        issuer: 'Cloud Native Computing Foundation',
-        date: '2022-09',
-        credentialUrl: 'https://www.credly.com/badges/example',
-        description: 'Proven ability to perform the responsibilities of a Kubernetes administrator in a production environment.',
-        skills: ['Kubernetes', 'Container Orchestration', 'DevOps', 'Cloud Native']
-      },
-      {
-        id: 'cert6',
-        title: 'Oracle Certified Professional, Java SE 11 Developer',
-        issuer: 'Oracle',
-        date: '2022-06',
-        credentialUrl: 'https://www.credly.com/badges/example',
-        description: 'Demonstrated expertise in Java programming language and ability to develop robust applications using Java SE 11.',
-        skills: ['Java', 'Object-Oriented Programming', 'Software Development', 'Enterprise Applications']
-      }
-    ] as Certification[]),
+    ] as Certification[])
   },
   contact: {
     title: 'Contact',
@@ -238,21 +203,16 @@ Feel free to explore my projects and get in touch if you'd like to collaborate!
 I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
 
 ### 📧 Email
-Feel free to reach out at [john.doe@example.com](mailto:john.doe@example.com)
+Feel free to reach out at [kiransukumar@csu.fullerton.edu](mailto:kiransukumar@csu.fullerton.edu)
 
 ### 💼 LinkedIn
-Connect with me on [LinkedIn](https://linkedin.com/in/johndoe) for professional networking and updates.
+Connect with me on [LinkedIn](http://www.linkedin.com/in/kiran-sukumar) for professional networking and updates.
 
 ### 🐙 GitHub
-Check out my projects on [GitHub](https://github.com/johndoe) and let's collaborate!
-
-### 📱 Social Media
-- [Twitter](https://twitter.com/johndoe) - For tech updates and thoughts
-- [Dev.to](https://dev.to/johndoe) - Where I share my technical articles
-- [Medium](https://medium.com/@johndoe) - For longer-form content
+Check out my projects on [GitHub](https://github.com/Kiran9223) and let's collaborate!
 
 ### 📍 Location
-Based in San Francisco, CA, but available for remote work worldwide.
+Based in Fullerton, CA, but available for remote work worldwide.
 
 ### ⏰ Availability
 - Currently available for freelance projects
@@ -260,6 +220,28 @@ Based in San Francisco, CA, but available for remote work worldwide.
 - Willing to relocate for the right opportunity
 
 Feel free to reach out through any of these channels. I typically respond within 24 hours!
-    `,
+    `
   },
+  resume: {
+    title: 'Resume',
+    body: `
+<div style="text-align: center; margin-bottom: 20px;">
+  <a
+    href="https://drive.google.com/drive/u/4/folders/1F8P2wf69IOYg3zShVpt7JhKjh57ly2hS"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="download-button"
+  >
+    Download Resume
+  </a>
+</div>
+
+<iframe 
+  src="https://drive.google.com/file/d/1dqQof4aD7qipdsNI5SASAdgcsMm5-Cc3/preview" 
+  width="100%" 
+  height="800px" 
+  allow="autoplay"
+></iframe>
+    `
+  }
 }; 

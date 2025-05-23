@@ -6,7 +6,7 @@ const TitleBar: React.FC = () => {
     <Box
       sx={{
         height: '32px',
-        bgcolor: '#1E1E1E',
+        bgcolor: '#252526',
         borderBottom: '1px solid',
         borderColor: '#333333',
         display: 'flex',

@@ -20,6 +20,39 @@ interface EditorProps {
 
 const Editor: React.FC<EditorProps> = ({ activeTab, content, fileName }) => {
   const renderContent = () => {
+    if (fileName.endsWith('.pdf')) {
+      // For resume section, render HTML directly
+      return (
+        <Box sx={{ 
+          p: { xs: 1.5, sm: 3, md: 4 },
+          maxWidth: '100%',
+          mx: 'auto',
+          '& iframe': {
+            width: '100%',
+            height: '800px',
+            border: 'none',
+            borderRadius: '8px',
+            boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'
+          },
+          '& .download-button': {
+            display: 'inline-block',
+            padding: '10px 20px',
+            backgroundColor: '#7C3AED',
+            color: 'white',
+            textDecoration: 'none',
+            borderRadius: '4px',
+            transition: 'background-color 0.2s',
+            marginTop: '20px',
+            '&:hover': {
+              backgroundColor: '#6D28D9'
+            }
+          }
+        }}>
+          <div dangerouslySetInnerHTML={{ __html: content.body }} />
+        </Box>
+      );
+    }
+
     if (fileName.endsWith('.md')) {
       const htmlContent = DOMPurify.sanitize(marked.parse(content.body) as string);
       return (

@@ -17,6 +17,7 @@ interface WelcomePageProps {
     linkedin: string;
     email: string;
   };
+
 }
 
 const WelcomePage: React.FC<WelcomePageProps> = ({ onClose, onNavigate, socialLinks }) => {

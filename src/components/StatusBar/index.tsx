@@ -11,9 +11,9 @@ const StatusBar: React.FC = () => {
       <Box
         sx={{
           height: '22px',
-          bgcolor: '#1E1E1E',
+          bgcolor: '#007ACC',
           borderTop: '1px solid',
-          borderColor: '#333333',
+          borderColor: '#0066AA',
           display: 'flex',
           alignItems: 'center',
           px: 2,
@@ -23,7 +23,7 @@ const StatusBar: React.FC = () => {
         <Typography
           variant="caption"
           sx={{
-            color: '#858585',
+            color: '#FFFFFF',
             fontSize: '0.75rem',
             fontWeight: 400,
           }}
@@ -34,13 +34,13 @@ const StatusBar: React.FC = () => {
           sx={{
             height: '100%',
             width: '1px',
-            bgcolor: '#333333',
+            bgcolor: '#0066AA',
           }}
         />
         <Typography
           variant="caption"
           sx={{
-            color: '#858585',
+            color: '#FFFFFF',
             fontSize: '0.75rem',
             fontWeight: 400,
           }}
@@ -52,7 +52,7 @@ const StatusBar: React.FC = () => {
           <IconButton
             onClick={() => setIsChatOpen(true)}
             sx={{
-              color: '#007ACC',
+              color: '#FFFFFF',
               p: 0.5,
               position: 'relative',
               '&::before': {
@@ -64,13 +64,13 @@ const StatusBar: React.FC = () => {
                 width: '32px',
                 height: '32px',
                 borderRadius: '50%',
-                background: 'radial-gradient(circle, rgba(0, 122, 204, 0.2) 0%, rgba(0, 122, 204, 0) 70%)',
+                background: 'radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 70%)',
                 transition: 'all 0.3s ease',
               },
               '&:hover': {
-                color: '#D4D4D4',
+                color: '#FFFFFF',
                 '&::before': {
-                  background: 'radial-gradient(circle, rgba(0, 122, 204, 0.4) 0%, rgba(0, 122, 204, 0) 70%)',
+                  background: 'radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 70%)',
                   width: '40px',
                   height: '40px',
                 },
@@ -80,7 +80,7 @@ const StatusBar: React.FC = () => {
             <SmartToyIcon 
               sx={{ 
                 fontSize: '1.5rem',
-                filter: 'drop-shadow(0 0 8px rgba(0, 122, 204, 0.5))',
+                filter: 'drop-shadow(0 0 8px rgba(255, 255, 255, 0.5))',
                 transition: 'all 0.3s ease',
               }} 
             />
