@@ -76,6 +76,15 @@ Feel free to explore my projects and get in touch if you'd like to collaborate!
     title: 'Projects',
     body: JSON.stringify([
       {
+        id: 'project5',
+        title: 'HopOn',
+        description: 'Developed a full-stack ride-sharing application with an event-driven microservices architecture. The platform connects riders and drivers in real time using Kafka for asynchronous communication and Redis for low-latency caching. Built with a focus on scalability, modularity, and responsive UI.',
+        technologies: ['Next.js', 'Sprin Boot', 'JWT', 'Kafka', 'Redis', 'PostgreSQL'],
+        githubUrl: 'https://github.com/Kiran9223/hop-on',
+        liveUrl: 'https://github.com/Kiran9223/hop-on'
+      },
+
+      {
         id: 'project1',
         title: 'Stratosphere',
         description: 'Developed a dynamic backend with FastAPI and asynchronous programming for secure user subscription management, leveraging JWT-based authentication, RBAC, and real-time usage tracking. Simulated cloud services to enforce subscription plan limits and provided admin functionalities to manage plans, permissions, and user access seamlessly.',
@@ -114,7 +123,7 @@ Feel free to explore my projects and get in touch if you'd like to collaborate!
     body: JSON.stringify([
       {
         category: 'Frontend',
-        items: ['React', 'Angular', 'Material-UI', 'Tailwind CSS', 'HTML5', 'CSS3', 'JavaScript']
+        items: ['Next.js', 'React', 'Angular', 'Material-UI', 'Tailwind CSS', 'HTML5', 'CSS3', 'JavaScript']
       },
       {
         category: 'Backend',
@@ -226,7 +235,7 @@ Connect with me on [LinkedIn](http://www.linkedin.com/in/kiran-sukumar) for prof
 Check out my projects on [GitHub](https://github.com/Kiran9223) and let's collaborate!
 
 ### 📍 Location
-Based in Fullerton, CA, but available for remote work worldwide.
+Based in California, USA, but available for remote work worldwide.
 
 ### ⏰ Availability
 - Currently available for freelance projects
@@ -255,7 +264,50 @@ Feel free to reach out through any of these channels. I typically respond within
   width="100%" 
   height="800px" 
   allow="autoplay"
+  style="border: none; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);"
+  onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
 ></iframe>
+
+<div style="display: none; text-align: center; padding: 40px 20px; background: #1E1E1E; border-radius: 8px; border: 1px solid #333333;">
+  <div style="margin-bottom: 20px;">
+    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin: 0 auto; display: block;">
+      <path d="M14 2H6C4.9 2 4 2.9 4 4V20C4 21.1 4.89 22 5.99 22H18C19.1 22 20 21.1 20 20V8L14 2Z" fill="#007ACC"/>
+      <path d="M14 2V8H20" fill="#007ACC"/>
+      <path d="M16 13H8V11H16V13Z" fill="white"/>
+      <path d="M16 17H8V15H16V17Z" fill="white"/>
+      <path d="M10 9H8V7H10V9Z" fill="white"/>
+    </svg>
+  </div>
+  <h3 style="color: #D4D4D4; margin-bottom: 16px; font-size: 1.2rem;">Resume Preview Unavailable</h3>
+  <p style="color: #858585; margin-bottom: 24px; line-height: 1.6;">
+    The resume preview couldn't be loaded. Please use the download button above to view my resume.
+  </p>
+  <a
+    href="https://drive.google.com/file/d/1dqQof4aD7qipdsNI5SASAdgcsMm5-Cc3/view?usp=sharing"
+    target="_blank"
+    rel="noopener noreferrer"
+    style="
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      background: #007ACC;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    "
+    onmouseover="this.style.background='#0066AA'"
+    onmouseout="this.style.background='#007ACC'"
+  >
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M19 9H13V3H5V21H19V9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M19 9H13V3L19 9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    View Resume in Google Drive
+  </a>
+</div>
     `
   }
 }; 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, IconButton, Typography, List, ListItemButton, ListItemText } from '@mui/material';
+import { Box, IconButton, Typography, List, ListItemButton, ListItemText, useTheme, useMediaQuery } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import HistoryIcon from '@mui/icons-material/History';
 import { PortfolioSection, FileList } from '../../types';
@@ -23,13 +23,18 @@ const Tabs: React.FC<TabsProps> = ({
   tabHistory,
   onReopenTab
 }) => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+
   if (openFiles.length === 0) {
     return (
       <Box sx={{ 
         bgcolor: '#1E1E1E',
         borderBottom: '1px solid',
         borderColor: '#333333',
-        p: 2,
+        p: { xs: 1, sm: 2 },
+        maxHeight: { xs: '60vh', sm: 'none' },
+        overflow: 'auto',
       }}>
         <Typography 
           variant="subtitle2" 
@@ -39,7 +44,7 @@ const Tabs: React.FC<TabsProps> = ({
             alignItems: 'center', 
             gap: 1,
             color: '#D4D4D4',
-            fontSize: '0.75rem',
+            fontSize: { xs: '0.7rem', sm: '0.75rem' },
             fontWeight: 600,
             textTransform: 'uppercase',
             letterSpacing: '0.5px',
@@ -58,8 +63,8 @@ const Tabs: React.FC<TabsProps> = ({
                 key={fileId}
                 onClick={() => onReopenTab(fileId)}
                 sx={{
-                  py: 1,
-                  px: 2,
+                  py: { xs: 0.75, sm: 1 },
+                  px: { xs: 1.5, sm: 2 },
                   borderRadius: '4px',
                   '&:hover': {
                     bgcolor: '#2D2D2D',
@@ -72,11 +77,12 @@ const Tabs: React.FC<TabsProps> = ({
                   primaryTypographyProps={{
                     variant: 'body2',
                     color: '#D4D4D4',
-                    fontSize: '0.875rem',
+                    fontSize: { xs: '0.8rem', sm: '0.875rem' },
                   }}
                   secondaryTypographyProps={{
                     variant: 'caption',
                     color: '#858585',
+                    fontSize: { xs: '0.7rem', sm: '0.75rem' },
                   }}
                 />
               </ListItemButton>
@@ -86,7 +92,7 @@ const Tabs: React.FC<TabsProps> = ({
             <ListItemButton>
               <ListItemText
                 primary={
-                  <Typography sx={{ color: '#858585', fontSize: '0.875rem' }}>
+                  <Typography sx={{ color: '#858585', fontSize: { xs: '0.8rem', sm: '0.875rem' } }}>
                     No recently closed tabs
                   </Typography>
                 }
@@ -101,29 +107,45 @@ const Tabs: React.FC<TabsProps> = ({
   return (
     <Box
       sx={{
-        height: '35px',
+        minHeight: { xs: '40px', sm: '35px' },
         bgcolor: '#1E1E1E',
         borderBottom: '1px solid',
         borderColor: '#333333',
         display: 'flex',
         alignItems: 'center',
-        px: 1,
-        gap: 0.5,
+        px: { xs: 0.5, sm: 1 },
+        gap: { xs: 0.25, sm: 0.5 },
+        overflow: 'auto',
+        '&::-webkit-scrollbar': {
+          height: { xs: '4px', sm: '6px' },
+        },
+        '&::-webkit-scrollbar-track': {
+          background: '#1E1E1E',
+        },
+        '&::-webkit-scrollbar-thumb': {
+          background: '#333333',
+          borderRadius: '2px',
+          '&:hover': {
+            background: '#444444',
+          },
+        },
       }}
     >
       {openFiles.map((file) => (
         <Box
           key={file}
           sx={{
-            height: '100%',
+            minHeight: { xs: '40px', sm: '35px' },
             display: 'flex',
             alignItems: 'center',
-            px: 2,
-            gap: 1,
+            px: { xs: 1, sm: 2 },
+            gap: { xs: 0.5, sm: 1 },
             cursor: 'pointer',
             borderRight: '1px solid',
             borderColor: '#333333',
             bgcolor: activeFile === file ? '#1E1E1E' : '#2D2D2D',
+            minWidth: { xs: '120px', sm: 'auto' },
+            flexShrink: 0,
             '&:hover': {
               bgcolor: activeFile === file ? '#1E1E1E' : '#2D2D2D',
             },
@@ -134,8 +156,12 @@ const Tabs: React.FC<TabsProps> = ({
             variant="body2"
             sx={{
               color: activeFile === file ? '#D4D4D4' : '#858585',
-              fontSize: '0.875rem',
+              fontSize: { xs: '0.75rem', sm: '0.875rem' },
               fontWeight: 400,
+              whiteSpace: 'nowrap',
+              overflow: 'hidden',
+              textOverflow: 'ellipsis',
+              maxWidth: { xs: '80px', sm: '120px', md: '150px' },
             }}
           >
             {fileList.find(f => f.id === file)?.label || file}
@@ -147,8 +173,10 @@ const Tabs: React.FC<TabsProps> = ({
               onFileClose(file);
             }}
             sx={{
-              p: 0.5,
+              p: { xs: 0.25, sm: 0.5 },
               color: '#858585',
+              minWidth: { xs: '24px', sm: 'auto' },
+              minHeight: { xs: '24px', sm: 'auto' },
               '&:hover': {
                 color: '#D4D4D4',
                 bgcolor: '#3D3D3D',

@@ -149,7 +149,7 @@ function App() {
   const handleFileSelect = (fileId: PortfolioSection) => {
     setSelectedFile(fileId);
     if (!openFiles.includes(fileId)) {
-      setOpenFiles([...openFiles, fileId]);
+      setOpenFiles([fileId, ...openFiles]);
     }
   };
 
@@ -163,7 +163,7 @@ function App() {
   };
 
   const handleReopenTab = (fileId: PortfolioSection) => {
-    setOpenFiles([...openFiles, fileId]);
+    setOpenFiles([fileId, ...openFiles]);
     setSelectedFile(fileId);
     setTabHistory(prev => prev.filter(id => id !== fileId));
   };
@@ -178,13 +178,14 @@ function App() {
         bgcolor: 'background.default',
         color: 'text.primary',
         position: 'relative',
+        overflow: 'hidden',
         '&::before': {
           content: '""',
           position: 'absolute',
           top: 0,
           left: 0,
           right: 0,
-          height: '200px',
+          height: { xs: '100px', sm: '150px', md: '200px' },
           background: 'linear-gradient(180deg, rgba(124, 58, 237, 0.1) 0%, rgba(16, 185, 129, 0.05) 100%)',
           zIndex: 0,
           pointerEvents: 'none',
@@ -204,6 +205,7 @@ function App() {
           overflow: 'hidden',
           position: 'relative',
           zIndex: 1,
+          minHeight: 0, // Important for flexbox overflow handling
         }}>
           <SidePanel 
             fileList={fileList} 
@@ -215,6 +217,8 @@ function App() {
             display: 'flex', 
             flexDirection: 'column',
             position: 'relative',
+            minWidth: 0, // Important for flexbox overflow handling
+            minHeight: 0, // Important for flexbox overflow handling
             '&::after': {
               content: '""',
               position: 'absolute',
@@ -236,11 +240,19 @@ function App() {
               onReopenTab={handleReopenTab}
             />
             {openFiles.length > 0 && (
-              <Editor 
-                activeTab={selectedFile}
-                content={content[selectedFile]} 
-                fileName={fileList.find(f => f.id === selectedFile)?.fileName || ''}
-              />
+              <Box sx={{ 
+                flex: 1, 
+                overflow: 'hidden', 
+                minHeight: 0,
+                display: 'flex',
+                flexDirection: 'column',
+              }}>
+                <Editor 
+                  activeTab={selectedFile}
+                  content={content[selectedFile]} 
+                  fileName={fileList.find(f => f.id === selectedFile)?.fileName || ''}
+                />
+              </Box>
             )}
           </Box>
         </Box>
