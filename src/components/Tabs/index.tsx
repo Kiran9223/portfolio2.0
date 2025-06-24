@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, IconButton, Typography, List, ListItemButton, ListItemText, useTheme } from '@mui/material';
+import { Box, IconButton, Typography, List, ListItemButton, ListItemText } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import HistoryIcon from '@mui/icons-material/History';
 import { PortfolioSection, FileList } from '../../types';
@@ -23,8 +23,6 @@ const Tabs: React.FC<TabsProps> = ({
   tabHistory,
   onReopenTab
 }) => {
-  const theme = useTheme();
-
   if (openFiles.length === 0) {
     return (
       <Box sx={{ 
