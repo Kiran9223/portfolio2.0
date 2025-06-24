@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import { Box, Typography, IconButton, Tooltip, useTheme, useMediaQuery } from '@mui/material';
+import { Box, Typography, IconButton, Tooltip, useTheme } from '@mui/material';
 import SmartToyIcon from '@mui/icons-material/SmartToy';
 import ChatWindow from '../ChatWindow';
 
 const StatusBar: React.FC = () => {
   const [isChatOpen, setIsChatOpen] = useState(false);
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
   return (
     <>

@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { Box, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography, IconButton, Tooltip, useTheme, useMediaQuery, Drawer } from '@mui/material';
-import { FileList, FileItem, PortfolioSection } from '../../types';
+import { FileList, PortfolioSection } from '../../types';
 import DescriptionIcon from '@mui/icons-material/Description';
-import FolderIcon from '@mui/icons-material/Folder';
 import HomeIcon from '@mui/icons-material/Home';
 import CodeIcon from '@mui/icons-material/Code';
 import WorkIcon from '@mui/icons-material/Work';

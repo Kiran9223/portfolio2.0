@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, IconButton, Typography, List, ListItemButton, ListItemText, useTheme, useMediaQuery } from '@mui/material';
+import { Box, IconButton, Typography, List, ListItemButton, ListItemText, useTheme } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import HistoryIcon from '@mui/icons-material/History';
 import { PortfolioSection, FileList } from '../../types';
@@ -24,7 +24,6 @@ const Tabs: React.FC<TabsProps> = ({
   onReopenTab
 }) => {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
   if (openFiles.length === 0) {
     return (
